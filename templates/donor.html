@@ -1,0 +1,66 @@
+<!doctype html>
+{% extends "base.html" %}
+{% block content %}
+<center>
+
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{mess}}</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+   
+
+<div class="card text-left mt-5" style="width: 35rem;">
+  <div class="card-body">
+      <form action = "{{url_for('add')}}" method = "POST">
+         <h3>information</h3>
+         state<br>
+
+         <select name="blood_group" class="form-control">
+            <option value="guj" selected>guj</option>
+           <option value="kerela">kerela</option>
+           <option value="tamil nadu">tamil nadu</option>
+        
+         </select>
+
+         <label for="name">Name</label>
+         <input type = "text" name = "donorname" class="form-control" required/><br>
+
+         <label for="gender">gender</label>
+         <div class="form-check">
+  <input class="form-check-input" type="radio" name="gender" id="exampleRadios1" value="male" checked>
+  <label class="form-check-label" for="exampleRadios1">
+    Male
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="gender" id="exampleRadios2" value="female">
+  <label class="form-check-label" for="exampleRadios2">
+    Female
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="gender" id="exampleRadios2" value="other">
+  <label class="form-check-label" for="exampleRadios2">
+    Other
+  </label>
+</div>
+
+
+
+         <input type = "text" name ="dweight" class="form-control"  required/><br>
+
+  <label for="email">Email</label>
+         <input type = "text" name ="email" class="form-control"  required/><br>
+
+      <label for="phone">Phone</label>
+         <input type = "text" name ="phone" class="form-control"  required/><br>
+         <input type = "submit" value = "submit" class="btn btn-primary" /><br>
+
+      </form>
+    </div>
+  </div>
+</center>
+     {% endblock %}
